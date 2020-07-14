@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}{{title}}
+{% endblock title %}
+{% block blah %}
+<section class="about-section text-center" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="text-white mb-4">English to Urdu using Google Translate API</h2>
+                <form action="" method="post">
+                    <p class="text-white-50">
+                        Enter Text : <input type="text" name="to_translate" id="" value="{{text_value}}">
+                        <input type="submit" value="Translate">
+                    </p>
+                    {% if translated %}
+                    <p class="text-white-50" style="font-family: 'Jameel Noori Nastaleeq'; color:white; font-size: large">
+                        ترجمہ: {{ translated }} 
+                    </p>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+        <img class="img-fluid" src="{{url_for('static',filename='assets/img/ipad.png')}}" alt="" />
+    </div>
+</section>
+{% endblock %}
